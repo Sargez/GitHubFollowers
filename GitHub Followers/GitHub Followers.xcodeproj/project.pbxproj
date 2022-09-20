@@ -14,6 +14,7 @@
 		98945B1D28D9C38B005C1938 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B1C28D9C38B005C1938 /* SearchVC.swift */; };
 		98945B1F28D9C3AF005C1938 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B1E28D9C3AF005C1938 /* FavoritesListVC.swift */; };
 		98945B2128D9CD8E005C1938 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B2028D9CD8E005C1938 /* GFButton.swift */; };
+		98945B2328D9CF19005C1938 /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B2228D9CF19005C1938 /* GFTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		98945B1C28D9C38B005C1938 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		98945B1E28D9C3AF005C1938 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		98945B2028D9CD8E005C1938 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = SOURCE_ROOT; };
+		98945B2228D9CF19005C1938 /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		98945B0328D9AC6F005C1938 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				98945B2228D9CF19005C1938 /* GFTextField.swift */,
 				98945B2028D9CD8E005C1938 /* GFButton.swift */,
 				98945B0428D9AC6F005C1938 /* AppDelegate.swift */,
 				98945B0628D9AC6F005C1938 /* SceneDelegate.swift */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98945B2328D9CF19005C1938 /* GFTextField.swift in Sources */,
 				98945B1D28D9C38B005C1938 /* SearchVC.swift in Sources */,
 				98945B2128D9CD8E005C1938 /* GFButton.swift in Sources */,
 				98945B1F28D9C3AF005C1938 /* FavoritesListVC.swift in Sources */,
