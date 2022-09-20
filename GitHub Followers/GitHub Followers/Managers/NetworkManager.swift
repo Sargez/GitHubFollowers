@@ -16,27 +16,27 @@ class NetworkManager {
     private init() {}
     
     
-    func getFollowers(for userName: String, page: Int, complitionHandler: @escaping ([Follower]?, String?)->Void) {
+    func getFollowers(for userName: String, page: Int, complitionHandler: @escaping (Result<[Follower], GFError>) -> Void) {
         let endPoint = baseUrl + "\(userName)/followers?per_page=\(perPage)&page=\(page)"
         
         guard let url = URL(string: endPoint) else {
-            complitionHandler(nil, "Unvailable to get the data. Bad request url. Please try again.")
+            complitionHandler(.failure(.invalidRequest))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let _ = error {
-                complitionHandler(nil, "Unable to get data. Please check youe internet connection and try again.")
+                complitionHandler(.failure(.badConnection))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                complitionHandler(nil, "Invalid response from the server. Please try again.")
+                complitionHandler(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                complitionHandler(nil, "The data received from the server was invalid. Please try again.")
+                complitionHandler(.failure(.invalidData))
                 return
             }
             
@@ -44,9 +44,9 @@ class NetworkManager {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let followers = try decoder.decode([Follower].self, from: data)
-                complitionHandler(followers, nil)
+                complitionHandler(.success(followers))
             } catch {
-                complitionHandler(nil, "The data received from the server was invalid. Please try again.")
+                complitionHandler(.failure(.invalidData))
             }
         }
         

@@ -25,6 +25,7 @@
 		98945B3828DA58E8005C1938 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3728DA58E8005C1938 /* Follower.swift */; };
 		98945B3A28DA5988005C1938 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3928DA5988005C1938 /* User.swift */; };
 		98945B3D28DA6C35005C1938 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3C28DA6C35005C1938 /* NetworkManager.swift */; };
+		98945B4028DA7A76005C1938 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3F28DA7A76005C1938 /* GFError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		98945B3728DA58E8005C1938 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		98945B3928DA5988005C1938 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		98945B3C28DA6C35005C1938 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		98945B3F28DA7A76005C1938 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		98945B0328D9AC6F005C1938 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				98945B3E28DA7A24005C1938 /* Utilities */,
 				98945B3B28DA6C1F005C1938 /* Managers */,
 				98945B3628DA58D6005C1938 /* Model */,
 				98945B1228D9AC71005C1938 /* Info.plist */,
@@ -149,6 +152,14 @@
 				98945B3C28DA6C35005C1938 /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		98945B3E28DA7A24005C1938 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				98945B3F28DA7A76005C1938 /* GFError.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98945B2F28DA15E6005C1938 /* GFContainerAlertView.swift in Sources */,
+				98945B4028DA7A76005C1938 /* GFError.swift in Sources */,
 				98945B3828DA58E8005C1938 /* Follower.swift in Sources */,
 				98945B3128DA1EFB005C1938 /* UIViewController+Extension.swift in Sources */,
 				98945B2728D9F416005C1938 /* String+Extension.swift in Sources */,
