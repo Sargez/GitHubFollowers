@@ -22,6 +22,10 @@
 		98945B2D28DA1585005C1938 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B2C28DA1585005C1938 /* GFAlertVC.swift */; };
 		98945B2F28DA15E6005C1938 /* GFContainerAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B2E28DA15E6005C1938 /* GFContainerAlertView.swift */; };
 		98945B3128DA1EFB005C1938 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3028DA1EFB005C1938 /* UIViewController+Extension.swift */; };
+		98945B3828DA58E8005C1938 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3728DA58E8005C1938 /* Follower.swift */; };
+		98945B3A28DA5988005C1938 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3928DA5988005C1938 /* User.swift */; };
+		98945B3D28DA6C35005C1938 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3C28DA6C35005C1938 /* NetworkManager.swift */; };
+		98945B4028DA7A76005C1938 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3F28DA7A76005C1938 /* GFError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		98945B2C28DA1585005C1938 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
 		98945B2E28DA15E6005C1938 /* GFContainerAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFContainerAlertView.swift; sourceTree = "<group>"; };
 		98945B3028DA1EFB005C1938 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		98945B3728DA58E8005C1938 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		98945B3928DA5988005C1938 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		98945B3C28DA6C35005C1938 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		98945B3F28DA7A76005C1938 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,9 @@
 		98945B0328D9AC6F005C1938 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				98945B3E28DA7A24005C1938 /* Utilities */,
+				98945B3B28DA6C1F005C1938 /* Managers */,
+				98945B3628DA58D6005C1938 /* Model */,
 				98945B1228D9AC71005C1938 /* Info.plist */,
 				98945B3528DA50E6005C1938 /* Custom views */,
 				98945B3428DA50D3005C1938 /* Extensions */,
@@ -124,6 +135,31 @@
 				98945B2E28DA15E6005C1938 /* GFContainerAlertView.swift */,
 			);
 			path = "Custom views";
+			sourceTree = "<group>";
+		};
+		98945B3628DA58D6005C1938 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98945B3728DA58E8005C1938 /* Follower.swift */,
+				98945B3928DA5988005C1938 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98945B3B28DA6C1F005C1938 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				98945B3C28DA6C35005C1938 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		98945B3E28DA7A24005C1938 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				98945B3F28DA7A76005C1938 /* GFError.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,12 +233,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				98945B2F28DA15E6005C1938 /* GFContainerAlertView.swift in Sources */,
+				98945B4028DA7A76005C1938 /* GFError.swift in Sources */,
+				98945B3828DA58E8005C1938 /* Follower.swift in Sources */,
 				98945B3128DA1EFB005C1938 /* UIViewController+Extension.swift in Sources */,
 				98945B2728D9F416005C1938 /* String+Extension.swift in Sources */,
+				98945B3D28DA6C35005C1938 /* NetworkManager.swift in Sources */,
 				98945B2328D9CF19005C1938 /* GFTextField.swift in Sources */,
 				98945B1D28D9C38B005C1938 /* SearchVC.swift in Sources */,
 				98945B2128D9CD8E005C1938 /* GFButton.swift in Sources */,
 				98945B1F28D9C3AF005C1938 /* FavoritesListVC.swift in Sources */,
+				98945B3A28DA5988005C1938 /* User.swift in Sources */,
 				98945B2D28DA1585005C1938 /* GFAlertVC.swift in Sources */,
 				98945B2528D9F174005C1938 /* FollowerListVC.swift in Sources */,
 				98945B2928DA13FC005C1938 /* GFTitleLabel.swift in Sources */,
