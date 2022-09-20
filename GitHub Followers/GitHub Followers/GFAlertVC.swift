@@ -15,7 +15,7 @@ class GFAlertVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
-        setupView()
+        setupContainerView()
     }
     
     
@@ -27,11 +27,10 @@ class GFAlertVC: UIViewController {
     init(title:String, message:String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.containerView = GFContainerAlertView(textTitle: title, message: message, buttonTitle: buttonTitle)
-        setupView()
     }
     
     
-    private func setupView() {
+    private func setupContainerView() {
         view.addSubview(containerView)
         containerView.delegate = self
         
@@ -40,8 +39,7 @@ class GFAlertVC: UIViewController {
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 220)
-        ])
-        
+        ])        
     }
     
     

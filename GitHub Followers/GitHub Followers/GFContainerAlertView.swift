@@ -20,8 +20,8 @@ class GFContainerAlertView: UIView {
     private let padding: CGFloat = 20
     
     private var textTitle: String!
-    private var message: String?
-    private var buttonTitle: String?
+    private var message: String!
+    private var buttonTitle: String!
     
     weak var delegate: GFContainerAlertViewDelegate?
     
@@ -38,9 +38,9 @@ class GFContainerAlertView: UIView {
     
     init(textTitle:String, message:String, buttonTitle: String) {
         super.init(frame: .zero)
-        self.textTitle = textTitle
-        self.message = message
-        self.buttonTitle = buttonTitle
+        self.textTitle       = textTitle
+        self.message         = message
+        self.buttonTitle     = buttonTitle
         setupView()
     }
     
@@ -97,7 +97,7 @@ class GFContainerAlertView: UIView {
             messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: padding),
-            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
+            actionButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 12)
         ])
     }
 }
