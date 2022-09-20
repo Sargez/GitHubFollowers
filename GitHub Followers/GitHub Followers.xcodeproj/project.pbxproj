@@ -13,6 +13,7 @@
 		98945B1128D9AC71005C1938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98945B0F28D9AC71005C1938 /* LaunchScreen.storyboard */; };
 		98945B1D28D9C38B005C1938 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B1C28D9C38B005C1938 /* SearchVC.swift */; };
 		98945B1F28D9C3AF005C1938 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B1E28D9C3AF005C1938 /* FavoritesListVC.swift */; };
+		98945B2128D9CD8E005C1938 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B2028D9CD8E005C1938 /* GFButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		98945B1228D9AC71005C1938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98945B1C28D9C38B005C1938 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		98945B1E28D9C3AF005C1938 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		98945B2028D9CD8E005C1938 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		98945B0328D9AC6F005C1938 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				98945B2028D9CD8E005C1938 /* GFButton.swift */,
 				98945B0428D9AC6F005C1938 /* AppDelegate.swift */,
 				98945B0628D9AC6F005C1938 /* SceneDelegate.swift */,
 				98945B1C28D9C38B005C1938 /* SearchVC.swift */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98945B1D28D9C38B005C1938 /* SearchVC.swift in Sources */,
+				98945B2128D9CD8E005C1938 /* GFButton.swift in Sources */,
 				98945B1F28D9C3AF005C1938 /* FavoritesListVC.swift in Sources */,
 				98945B0528D9AC6F005C1938 /* AppDelegate.swift in Sources */,
 				98945B0728D9AC6F005C1938 /* SceneDelegate.swift in Sources */,
