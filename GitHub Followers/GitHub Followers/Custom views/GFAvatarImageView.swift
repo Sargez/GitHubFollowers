@@ -25,8 +25,15 @@ class GFAvatarImageView: UIImageView {
     
     private func setupView() {
         layer.cornerRadius                          = 10
-//        clipsToBounds                             = true
+        clipsToBounds                               = true
         image                                       = placeHolderImage
         translatesAutoresizingMaskIntoConstraints   = false
+    }
+    
+    
+    func downloadImage(with urlString: String) {
+        NetworkManager.shared.downloadImage(from: urlString) { image in
+            DispatchQueue.main.async { self.image = image }
+        }
     }
 }

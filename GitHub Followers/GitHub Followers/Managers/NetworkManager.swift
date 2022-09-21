@@ -5,10 +5,13 @@
 //  Created by Злобин Сергей Александрович on 21.09.2022.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
+    
     static let shared   = NetworkManager()
+    static let cache    = NSCache<NSString, UIImage>()
+    
     private let baseUrl = "https://api.github.com/users/"
     private let perPage = 100
     
@@ -50,6 +53,33 @@ class NetworkManager {
             }
         }
         
+        task.resume()
+    }
+    
+    
+    func downloadImage(from urlString: String, complitionHandler: @escaping (UIImage) -> Void) {
+        
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = NetworkManager.cache.object(forKey: cacheKey) {
+            complitionHandler(image)
+            return
+        }
+        
+        guard let url = URL(string: urlString) else { return }
+                
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil else { return }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+            guard let data = data else { return }
+            
+            guard let image = UIImage(data: data) else { return }
+            
+            NetworkManager.cache.setObject(image, forKey: cacheKey)
+            
+            complitionHandler(image)
+        }
+    
         task.resume()
     }
 }
