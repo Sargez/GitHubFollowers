@@ -7,6 +7,8 @@
 
 import UIKit
 
+fileprivate var containerView: UIView! //REFACTOR THIS
+
 extension UIViewController {
     
     func presentModallyGFAlertVCOnTheMainThread(title: String, message: String, buttonTitle: String) {
@@ -18,4 +20,36 @@ extension UIViewController {
         }
     }
     
+    
+    func showLoadingView() {
+        containerView                 = UIView(frame: view.bounds)
+        containerView.alpha           = 0
+        containerView.backgroundColor = .systemBackground
+        
+        view.addSubview(containerView)
+        
+        UIViewPropertyAnimator(duration: 0.25, curve: .easeOut) {
+            containerView.alpha = 0.8
+        }.startAnimation()
+        
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(spinner)
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        spinner.startAnimating()
+    }
+    
+    
+    func dismissLoadView() {
+        DispatchQueue.main.async {
+            containerView.removeFromSuperview()
+            containerView = nil
+        }
+    }
 }
