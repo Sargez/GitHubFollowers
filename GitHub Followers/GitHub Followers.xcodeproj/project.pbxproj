@@ -28,6 +28,7 @@
 		98945B4028DA7A76005C1938 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B3F28DA7A76005C1938 /* GFError.swift */; };
 		98945B4328DB1230005C1938 /* FollowerCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B4228DB1230005C1938 /* FollowerCells.swift */; };
 		98945B4528DB145E005C1938 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B4428DB145E005C1938 /* GFAvatarImageView.swift */; };
+		98945B4828DB3FF9005C1938 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98945B4728DB3FF9005C1938 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		98945B3F28DA7A76005C1938 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		98945B4228DB1230005C1938 /* FollowerCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCells.swift; sourceTree = "<group>"; };
 		98945B4428DB145E005C1938 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		98945B4728DB3FF9005C1938 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				98945B3F28DA7A76005C1938 /* GFError.swift */,
+				98945B4728DB3FF9005C1938 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				98945B2F28DA15E6005C1938 /* GFContainerAlertView.swift in Sources */,
 				98945B4028DA7A76005C1938 /* GFError.swift in Sources */,
 				98945B4528DB145E005C1938 /* GFAvatarImageView.swift in Sources */,
+				98945B4828DB3FF9005C1938 /* UIHelper.swift in Sources */,
 				98945B3828DA58E8005C1938 /* Follower.swift in Sources */,
 				98945B3128DA1EFB005C1938 /* UIViewController+Extension.swift in Sources */,
 				98945B2728D9F416005C1938 /* String+Extension.swift in Sources */,
