@@ -60,6 +60,10 @@ class FollowerListVC: UIViewController {
             case .success(let followers):
                 if followers.count < NetworkManager.perPage { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
+                if self.followers.isEmpty {
+                    self.showEmptyStateViewOnTheMainThread(with: "This user doesn't have any followers. Go follow them.")
+                    return
+                }
                 self.updateData()
             case . failure(let error):
                 self.presentModallyGFAlertVCOnTheMainThread(title: "Bad stuff happened", message: error.rawValue, buttonTitle: "Ok")
