@@ -84,7 +84,6 @@ class SearchVC: UIViewController {
         guard userNameTextIsEntered else {
             presentModallyGFAlertVCOnTheMainThread(title: "Empty user name", message: "You should type any user name. We want to know who to look for 😀.", buttonTitle: "Ok")
             return
-            
         }
         
         let followerListVC      = FollowerListVC()
