@@ -8,5 +8,9 @@
 import Foundation
 
 enum SFSymbols {
-    static let location = "location"
+    static let location  = "location"
+    static let repo      = "folder"
+    static let gists     = "left.align"
+    static let followers = "heart"
+    static let following = "persons"
 }
