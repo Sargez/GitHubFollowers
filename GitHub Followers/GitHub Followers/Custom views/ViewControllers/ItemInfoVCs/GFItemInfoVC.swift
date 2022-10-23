@@ -9,12 +9,13 @@ import UIKit
 
 class GFItemInfoVC: UIViewController {
 
-    var stackView = UIStackView()
-    var itemInfoOne = GFItemInfoView()
-    var itemInfoTwo = GFItemInfoView()
+    var stackView    = UIStackView()
+    var itemInfoOne  = GFItemInfoView()
+    var itemInfoTwo  = GFItemInfoView()
     var actionButton = GFButton()
     
     var user: User!
+    weak var delegate: UserInfoVCDelegate!
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +32,7 @@ class GFItemInfoVC: UIViewController {
         setupViewController()
         layoutUI()
         setupStackView()
+        setupActionButton()
     }
     
     private func setupViewController() {
@@ -46,13 +48,19 @@ class GFItemInfoVC: UIViewController {
         stackView.addArrangedSubview(itemInfoTwo)
     }
     
+    func setupActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func actionButtonTapped() { }
+    
     private func layoutUI() {
         view.addSubview(stackView)
         view.addSubview(actionButton)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat                                = 20
-        let safeAreaGuide                                   = view!//.safeAreaLayoutGuide
+        let safeAreaGuide                                   = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: padding),

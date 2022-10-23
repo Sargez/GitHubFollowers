@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: AnyObject {
+    func didTappedGitHubProfile(for user: User)
+    func didTappedGetFollowers(with user: User)
+}
+
 class UserInfoVC: UIViewController {
 
     var username: String!
+    weak var delegate: FollowerListVCDelegate!
     
     private var headerView          = UIView()
     private var itemViewOne         = UIView()
@@ -35,15 +41,24 @@ class UserInfoVC: UIViewController {
             
             switch result {
             case .success(let userInfo):
-                DispatchQueue.main.async {
-                    self.add(childVC: GFUserInfoHeaderVC(user: userInfo), to: self.headerView)
-                    self.add(childVC: GFRepoItemVC(user: userInfo), to: self.itemViewOne)
-                    self.add(childVC: GFFollowersItemVC(user: userInfo), to: self.itemViewTwo)
-                }
+                DispatchQueue.main.async { self.setupElementsWithUser(userInfo: userInfo) }
             case .failure(let error):
                 self.presentModallyGFAlertVCOnTheMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    private func setupElementsWithUser(userInfo: User) {
+        
+        let repoVC      = GFRepoItemVC(user: userInfo)
+        repoVC.delegate = self
+        
+        let followersVC      = GFFollowersItemVC(user: userInfo)
+        followersVC.delegate = self
+        
+        self.add(childVC: GFUserInfoHeaderVC(user: userInfo), to: self.headerView)
+        self.add(childVC: repoVC, to: self.itemViewOne)
+        self.add(childVC: followersVC, to: self.itemViewTwo)
     }
     
     private func layoutUI() {
@@ -88,5 +103,26 @@ class UserInfoVC: UIViewController {
     @objc func doneButtonTapped() {
         presentingViewController?.dismiss(animated: true)
     }
+}
+
+
+extension UserInfoVC: UserInfoVCDelegate {
     
+    func didTappedGitHubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentModallyGFAlertVCOnTheMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        
+        presentSafariVC(withUrl: url)
+    }
+    
+    func didTappedGetFollowers(with user: User) {
+        guard user.followers != 0 else {
+            presentModallyGFAlertVCOnTheMainThread(title: "No followers", message: "This user has no followers.", buttonTitle: "Ok")
+            return
+        }
+        delegate.didRequestFollowers(for: user.login)
+        dismiss(animated: true)
+    }
 }
