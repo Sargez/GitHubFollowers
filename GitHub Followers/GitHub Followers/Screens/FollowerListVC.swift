@@ -35,19 +35,21 @@ class FollowerListVC: UIViewController {
         setupDataSource()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
-    
+
     private func setupViewController() {
         view.backgroundColor                                    = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles  = true
+        let addButton                                            = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                                   target: self,
+                                                                                   action: #selector(AddButtonTapped))
+        navigationItem.rightBarButtonItem                        = addButton
     }
     
-
     private func setupSearchController() {
         let searchController                     = UISearchController()
         searchController.searchResultsUpdater    = self
@@ -55,7 +57,6 @@ class FollowerListVC: UIViewController {
         searchController.searchBar.delegate      = self
         navigationItem.searchController          = searchController
     }
-    
     
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnCollectionViewLayout(in: view))
@@ -66,7 +67,6 @@ class FollowerListVC: UIViewController {
         collectionView.register(FollowerCells.self, forCellWithReuseIdentifier: FollowerCells.reuseIdentifier)
     }
         
-    
     private func getFollowers(for userName: String, page: Int) {
         showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) { [weak self] result in
@@ -87,7 +87,6 @@ class FollowerListVC: UIViewController {
         }
     }
     
-    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView) { collectionView, indexPath, follower in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCells.reuseIdentifier, for: indexPath) as! FollowerCells
@@ -95,14 +94,39 @@ class FollowerListVC: UIViewController {
             return cell
         }
     }
-    
-    
+        
     private func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
+    }
+    
+    @objc private func AddButtonTapped() {
+        showLoadingView()
+        NetworkManager.shared.getUserInfo(for: userName) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.dismissLoadView()
+            
+            switch result {
+            case .success(let user):
+                
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                PersistenceManager.updateWith(favorite: favorite, actionType: .add) {[weak self] error in
+                    guard let self = self else { return }
+                    guard let error = error else {
+                        self.presentModallyGFAlertVCOnTheMainThread(title: "Success!", message: "You've just successfuly favorited this user.", buttonTitle: "Hooray!")
+                        return
+                    }
+                    self.presentModallyGFAlertVCOnTheMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                }
+                
+            case.failure(let error):
+                self.presentModallyGFAlertVCOnTheMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
         }
     }
 }

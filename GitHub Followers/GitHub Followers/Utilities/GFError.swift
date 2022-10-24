@@ -8,9 +8,11 @@
 import Foundation
 
 enum GFError: String, Error {
-    case invalidRequest   = "This username created an invalid request. Please try again."
-    case badConnection    = "Unable to complete your request. Please check your internet connection and try again."
+    case invalidRequest     = "This username created an invalid request. Please try again."
+    case badConnection      = "Unable to complete your request. Please check your internet connection and try again."
     case invalidResponse    = "Invalid response from the server. Please try again."
     case invalidData        = "The data received from the server was invalid. Please try again."
+    case unableFavorites    = "Unable retrieve the favorities. Please try again."
+    case alreadyToFavorite  = "Tou' ve already favorited this user. Operation aborted."
 }
 
