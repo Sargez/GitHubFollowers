@@ -38,6 +38,7 @@
 		98C847442905DF1800F2AE79 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C847432905DF1800F2AE79 /* GFItemInfoVC.swift */; };
 		98C847462905E4F200F2AE79 /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C847452905E4F200F2AE79 /* GFRepoItemVC.swift */; };
 		98C8474B2905F22700F2AE79 /* GFFollowersItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8474A2905F22700F2AE79 /* GFFollowersItemVC.swift */; };
+		98C8474D290695A700F2AE79 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8474C290695A700F2AE79 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		98C847432905DF1800F2AE79 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 		98C847452905E4F200F2AE79 /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
 		98C8474A2905F22700F2AE79 /* GFFollowersItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowersItemVC.swift; sourceTree = "<group>"; };
+		98C8474C290695A700F2AE79 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				98945B2628D9F416005C1938 /* String+Extension.swift */,
 				98945B3028DA1EFB005C1938 /* UIViewController+Extension.swift */,
+				98C8474C290695A700F2AE79 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				98945B4028DA7A76005C1938 /* GFError.swift in Sources */,
 				98945B4528DB145E005C1938 /* GFAvatarImageView.swift in Sources */,
 				98945B4828DB3FF9005C1938 /* UIHelper.swift in Sources */,
+				98C8474D290695A700F2AE79 /* Date+Extension.swift in Sources */,
 				98945B3828DA58E8005C1938 /* Follower.swift in Sources */,
 				989185D62905B619001A8DA2 /* GFUserInfoHeaderVC.swift in Sources */,
 				98945B3128DA1EFB005C1938 /* UIViewController+Extension.swift in Sources */,
