@@ -39,6 +39,7 @@
 		98C847462905E4F200F2AE79 /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C847452905E4F200F2AE79 /* GFRepoItemVC.swift */; };
 		98C8474B2905F22700F2AE79 /* GFFollowersItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8474A2905F22700F2AE79 /* GFFollowersItemVC.swift */; };
 		98C8474D290695A700F2AE79 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8474C290695A700F2AE79 /* Date+Extension.swift */; };
+		98C8474F2906AA8A00F2AE79 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8474E2906AA8A00F2AE79 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		98C847452905E4F200F2AE79 /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
 		98C8474A2905F22700F2AE79 /* GFFollowersItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowersItemVC.swift; sourceTree = "<group>"; };
 		98C8474C290695A700F2AE79 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		98C8474E2906AA8A00F2AE79 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				98945B3C28DA6C35005C1938 /* NetworkManager.swift */,
+				98C8474E2906AA8A00F2AE79 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				98C847422905D78B00F2AE79 /* GFItemInfoView.swift in Sources */,
 				98C847442905DF1800F2AE79 /* GFItemInfoVC.swift in Sources */,
 				98945B2728D9F416005C1938 /* String+Extension.swift in Sources */,
+				98C8474F2906AA8A00F2AE79 /* PersistenceManager.swift in Sources */,
 				98945B4328DB1230005C1938 /* FollowerCells.swift in Sources */,
 				98C847462905E4F200F2AE79 /* GFRepoItemVC.swift in Sources */,
 				98945B3D28DA6C35005C1938 /* NetworkManager.swift in Sources */,
